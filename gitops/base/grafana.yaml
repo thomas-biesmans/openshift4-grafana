@@ -1,10 +1,10 @@
-kind: Grafana
+iftkind: Grafana
 apiVersion: grafana.integreatly.org/v1beta1
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "3"
   labels:
-    dashboards: my-grafana
+    dashboards: openshift-grafana
   name: grafana
 spec:
   config:
