@@ -6,7 +6,6 @@ metadata:
   labels:
     dashboards: my-grafana
   name: grafana
-  namespace: my-grafana
 spec:
   config:
     auth:
