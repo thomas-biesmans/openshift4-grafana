@@ -20,4 +20,4 @@ metadata:
   name: grafana
 spec:
   targetNamespaces:
-   - my-grafana
+   - monitoring-grafana-dashboards
