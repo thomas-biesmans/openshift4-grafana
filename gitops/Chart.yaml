@@ -8,10 +8,10 @@ dependencies:
 - name: "Base Grafana installation"
   version: "1.0.0"
   repository: "file://base/"
-- name: "Custom dashboards"
+- name: "Custom Grafana dashboards"
   version: "1.0.0"
   repository: "file://custom_dashboards/"
-- name: "Native OpenShift dashboards"
+- name: "Native OpenShift Grafana dashboards"
   version: "1.0.0"
   repository: "file://native_openshift_dashboards/"
 

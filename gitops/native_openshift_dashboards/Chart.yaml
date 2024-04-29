@@ -1,6 +1,6 @@
 apiVersion: v2
-name: Native Grafana dashboards as provided by Red Hat
-description: A Helm chart for ArgoCD to deploy Grafana Dashboards through ArgoCD
+name: Native OpenShift Grafana dashboards
+description: A Helm chart for ArgoCD to deploy Grafana Dashboards through ArgoCD as provided by Red Hat
 version: 1.0.0
 appVersion: 1.0.0
 
