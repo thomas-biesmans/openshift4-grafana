@@ -1,0 +1,10 @@
+apiVersion: v2
+name: Custom Grafana dashboards as provided by kevchu3
+description: A Helm chart for ArgoCD to deploy Grafana Dashboards through ArgoCD
+version: 1.0.0
+appVersion: 1.0.0
+
+# Deploy custom Grafana from OperatorHub based on this blog:
+# https://www.redhat.com/en/blog/custom-grafana-dashboards-red-hat-openshift-container-platform-4
+
+# Re-worked from https://github.com/kevchu3/openshift4-grafana and forked

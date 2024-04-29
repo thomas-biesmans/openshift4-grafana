@@ -7,7 +7,7 @@ spec:
   resyncPeriod: 30s
   instanceSelector:
     matchLabels:
-      dashboards: my-grafana
+      dashboards: {{ .Values.grafana_dashboard_name }}
   datasources:
   - datasourceName: Prometheus
     inputName: DS_PROMETHEUS

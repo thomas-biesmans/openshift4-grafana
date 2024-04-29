@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     path: gitops/overlays/dashboards
-    repoURL: https://github.com/kevchu3/openshift4-grafana.git
+    repoURL: https://github.com/thomas-biesmans/openshift4-grafana.git
     targetRevision: HEAD
   syncPolicy:
     automated:

@@ -1,3 +1,4 @@
+---
 apiVersion: grafana.integreatly.org/v1beta1
 kind: GrafanaDatasource
 metadata:
@@ -47,7 +48,7 @@ spec:
             - -c
             - |
               set -e
-              NEW_TOKEN=`oc create token grafana-sa --duration=876000h -n monitoring-grafana-dashboards`
+              NEW_TOKEN=`oc create token grafana-sa --duration=876000h -n {{ .Values.namespace_to_deploy_grafana_and_dashboards }}`
               oc set data secret/grafana-credentials token=`echo ${NEW_TOKEN}`
               oc delete pod -l app=grafana
       restartPolicy: Never

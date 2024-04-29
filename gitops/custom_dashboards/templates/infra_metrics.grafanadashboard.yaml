@@ -2,12 +2,13 @@ apiVersion: grafana.integreatly.org/v1beta1
 kind: GrafanaDashboard
 metadata:
   name: infra-metrics
+  namespace: {{ .Values.namespace_to_deploy_grafana_and_dashboards }}
 spec:
   folder: "General"
   resyncPeriod: 30s
   instanceSelector:
     matchLabels:
-      dashboards: my-grafana
+      dashboards: {{ .Values.grafana_dashboard_name }}
   datasources:
   - datasourceName: Prometheus
     inputName: DS_PROMETHEUS
