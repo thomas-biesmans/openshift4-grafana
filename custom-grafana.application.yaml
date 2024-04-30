@@ -1,17 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: custom-grafana
+  name: grafana-openshift
   namespace: openshift-gitops
 spec:
   destination:
-    namespace: my-grafana
+    namespace: monitoring-grafana-dashboards
     server: https://kubernetes.default.svc
   project: default
   source:
     path: gitops/overlays/dashboards
     repoURL: https://github.com/thomas-biesmans/openshift4-grafana.git
     targetRevision: HEAD
+    helm:
+      valueFiles:
+      - values-dev.yaml
   syncPolicy:
     automated:
       prune: true

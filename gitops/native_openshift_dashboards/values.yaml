@@ -1,3 +1,0 @@
----
-namespace_to_deploy_grafana_and_dashboards: monitoring-grafana-dashboards
-grafana_dashboard_name: grafana-openshift
