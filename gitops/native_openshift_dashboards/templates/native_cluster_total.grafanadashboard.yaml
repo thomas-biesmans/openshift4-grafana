@@ -30,7 +30,10 @@ spec:
             "list": [
                 {
                     "builtIn": 1,
-                    "datasource": "prometheus",
+                    "datasource": {
+                        "type": "datasource",
+                        "uid": "grafana"
+                    },
                     "enable": true,
                     "hide": true,
                     "iconColor": "rgba(0, 211, 255, 1)",
@@ -1799,6 +1802,22 @@ spec:
                     "tagsQuery": "",
                     "type": "interval",
                     "useTags": false
+                },
+                {
+                    "current": {
+                        "text": "default",
+                        "value": "default"
+                    },
+                    "hide": 0,
+                    "label": null,
+                    "name": "datasource",
+                    "options": [
+
+                    ],
+                    "query": "prometheus",
+                    "refresh": 1,
+                    "regex": "",
+                    "type": "datasource"
                 },
                 {
                     "allValue": null,
