@@ -5,6 +5,7 @@ metadata:
   name: native-cluster-totals
   namespace: {{ .Values.namespace_to_deploy_grafana_and_dashboards }}
 spec:
+  folder: "OpenShift native dashboards"
   instanceSelector:
     matchLabels:
       dashboards: {{ .Values.grafana_dashboard_name }}
