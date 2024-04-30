@@ -5,11 +5,13 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "3"
   name: grafana-sa
+  namespace: {{ .Values.namespace_to_deploy_grafana_and_dashboards }}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   name: openshift-cluster-monitoring-view
+  namespace: {{ .Values.namespace_to_deploy_grafana_and_dashboards }}
   annotations:
     argocd.argoproj.io/hook: Sync
     argocd.argoproj.io/sync-wave: "3"
@@ -27,6 +29,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   name: cluster-monitoring-view-0
+  namespace: {{ .Values.namespace_to_deploy_grafana_and_dashboards }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
