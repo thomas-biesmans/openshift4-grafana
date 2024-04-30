@@ -1805,8 +1805,8 @@ spec:
                 },
                 {
                     "current": {
-                        "text": "default",
-                        "value": "default"
+                        "text": "${DS_PROMETHEUS}",
+                        "value": "${DS_PROMETHEUS}"
                     },
                     "hide": 0,
                     "label": null,
