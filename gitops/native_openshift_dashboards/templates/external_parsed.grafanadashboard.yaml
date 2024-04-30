@@ -1,0 +1,23 @@
+---
+{{- range $json_report := .Values.external_jsons }}
+{{ "#" }} Per: {{ $json_report.url }}
+apiVersion: grafana.integreatly.org/v1beta1
+kind: GrafanaDashboard
+metadata:
+  name: {{ $json_report.name }}
+  namespace: {{ .Values.namespace_to_deploy_grafana_and_dashboards }}
+spec:
+  folder: {{ $json_report.folder }}
+  instanceSelector:
+    matchLabels:
+      dashboards: {{ .Values.grafana_dashboard_name }}
+  datasources:
+  - datasourceName: Prometheus
+    inputName: DS_PROMETHEUS
+  json: |-
+{{- $yaml_report := $json_report.json | toYaml }}
+{{- range $replacement_operation := $json_report.replace_operations }}
+{{ $yaml_report := $yaml_report | replace $replacement_operation.from $replacement_operation.to }}
+{{- end }}
+{{- $yaml_report | indent 4 }}
+{{- end }}
