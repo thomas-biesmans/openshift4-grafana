@@ -8,7 +8,7 @@ metadata:
 spec:
   instanceSelector:
     matchLabels:
-      dashboards: openshift-grafana
+      dashboards: {{ .Values.grafana_dashboard_name }}
   valuesFrom:
     - targetPath: "secureJsonData.httpHeaderValue1"
       valueFrom:
