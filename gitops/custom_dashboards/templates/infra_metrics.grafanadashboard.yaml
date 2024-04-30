@@ -375,7 +375,7 @@ spec:
               "expr": "code:cluster:ingress_http_request_count:rate5m:sum",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "HTTP \{\{code\}\}",
+              "legendFormat": "HTTP {{ "{{" }}code{{ "}}" }}",
               "refId": "A",
               "step": 120
             }
@@ -579,7 +579,7 @@ spec:
               "expr": "(sum by (node) (kube_node_status_condition{condition=\"Ready\", status!=\"true\"}) and sum by (node) (kube_node_spec_unschedulable == 0))",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "NotReady: \{\{node\}\}",
+              "legendFormat": "NotReady: {{ "{{" }}node{{ "}}" }}",
               "refId": "A"
             },
             {
@@ -590,7 +590,7 @@ spec:
               "expr": "(sum by (node) (kube_node_status_condition{condition=\"DiskPressure\", status=\"true\"}) and sum by (node) (kube_node_spec_unschedulable == 0))",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "DiskPressure: \{\{node\}\}",
+              "legendFormat": "DiskPressure: {{ "{{" }}node{{ "}}" }}",
               "refId": "B"
             },
             {
@@ -601,7 +601,7 @@ spec:
               "expr": "(sum by (node) (kube_node_status_condition{condition=\"MemoryPressure\", status=\"true\"}) and sum by (node) (kube_node_spec_unschedulable == 0))",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "MemoryPressure: \{\{node\}\}",
+              "legendFormat": "MemoryPressure: {{ "{{" }}node{{ "}}" }}",
               "refId": "C"
             },
             {
@@ -612,7 +612,7 @@ spec:
               "expr": "(sum by (node) (kube_node_status_condition{condition=\"PIDPressure\", status=\"true\"}) and sum by (node) (kube_node_spec_unschedulable == 0))",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "PIDPressure: \{\{node\}\}",
+              "legendFormat": "PIDPressure: {{ "{{" }}node{{ "}}" }}",
               "refId": "D"
             }
           ],
@@ -1084,7 +1084,7 @@ spec:
               "expr": "sum by (node) ((instance:node_load1_per_cpu:ratio) * on (namespace, pod) group_left(node) node_namespace_pod:kube_pod_info:) and sum by (node) (cluster:master_nodes)",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "\{\{node\}\}",
+              "legendFormat": "{{ "{{" }}node{{ "}}" }}",
               "refId": "A",
               "step": 120
             }
@@ -1227,7 +1227,7 @@ spec:
               "expr": "sum by (node) ((instance:node_load1_per_cpu:ratio) * on (namespace, pod) group_left(node) node_namespace_pod:kube_pod_info:) unless sum by (node) (cluster:master_nodes)",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "\{\{node\}\}",
+              "legendFormat": "{{ "{{" }}node{{ "}}" }}",
               "refId": "A",
               "step": 120
             }
@@ -1335,7 +1335,7 @@ spec:
               "expr": "topk(20, sum by (namespace) (namespace:container_cpu_usage:sum{namespace=~\"(openshift).*\"}))",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "\{\{namespace\}\}",
+              "legendFormat": "{{ "{{" }}namespace{{ "}}" }}",
               "refId": "A"
             }
           ],
@@ -1431,7 +1431,7 @@ spec:
               "expr": "topk(20, sum by (namespace) (namespace:container_cpu_usage:sum{namespace!~\"(openshift).*\"}))",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "\{\{namespace\}\}",
+              "legendFormat": "{{ "{{" }}namespace{{ "}}" }}",
               "refId": "A"
             }
           ],
@@ -1561,7 +1561,7 @@ spec:
               "expr": "sum by (node) ((instance:node_memory_utilisation:ratio) * on (namespace, pod) group_left(node) node_namespace_pod:kube_pod_info:) and sum by (node) (cluster:master_nodes)",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "\{\{node\}\}",
+              "legendFormat": "{{ "{{" }}node{{ "}}" }}",
               "refId": "A"
             }
           ],
@@ -1702,7 +1702,7 @@ spec:
               "expr": "sum by (node) ((instance:node_memory_utilisation:ratio) * on (namespace, pod) group_left(node) node_namespace_pod:kube_pod_info:) unless sum by (node) (cluster:master_nodes)",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "\{\{node\}\}",
+              "legendFormat": "{{ "{{" }}node{{ "}}" }}",
               "refId": "A"
             }
           ],
@@ -1809,7 +1809,7 @@ spec:
               "expr": "topk(20, sum by (namespace) (namespace:container_memory_usage_bytes:sum{namespace=~\"(openshift).*\"}))",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "\{\{namespace\}\}",
+              "legendFormat": "{{ "{{" }}namespace{{ "}}" }}",
               "refId": "A"
             }
           ],
@@ -1905,7 +1905,7 @@ spec:
               "expr": "topk(20, sum by (namespace) (namespace:container_memory_usage_bytes:sum{namespace!~\"(openshift).*\"}))",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "\{\{namespace\}\}",
+              "legendFormat": "{{ "{{" }}namespace{{ "}}" }}",
               "refId": "A"
             }
           ],
@@ -2001,7 +2001,7 @@ spec:
               "expr": "sum by (node) ((irate(node_network_receive_bytes_total{job=\"node-exporter\",device!~\"veth.+\"}[1m])) * on (namespace, pod) group_left(node) node_namespace_pod:kube_pod_info:) and (sum by (node) (cluster:master_nodes))",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "in : \{\{node\}\}",
+              "legendFormat": "in : {{ "{{" }}node{{ "}}" }}",
               "refId": "A",
               "step": 120
             },
@@ -2013,7 +2013,7 @@ spec:
               "expr": "sum by (node) ((irate(node_network_transmit_bytes_total{job=\"node-exporter\",device!~\"veth.+\"}[1m])) * on (namespace, pod) group_left(node) node_namespace_pod:kube_pod_info:) and (sum by (node) (cluster:master_nodes))",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "out : \{\{node\}\}",
+              "legendFormat": "out : {{ "{{" }}node{{ "}}" }}",
               "refId": "B"
             }
           ],
@@ -2107,7 +2107,7 @@ spec:
               "expr": "sum by (node) ((irate(node_network_receive_bytes_total{job=\"node-exporter\",device!~\"veth.+\"}[1m])) * on (namespace, pod) group_left(node) node_namespace_pod:kube_pod_info:) unless (sum by (node) (cluster:master_nodes))",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "in : \{\{node\}\}",
+              "legendFormat": "in : {{ "{{" }}node{{ "}}" }}",
               "refId": "A",
               "step": 120
             },
@@ -2119,7 +2119,7 @@ spec:
               "expr": "sum by (node) ((irate(node_network_transmit_bytes_total{job=\"node-exporter\",device!~\"veth.+\"}[1m])) * on (namespace, pod) group_left(node) node_namespace_pod:kube_pod_info:) unless (sum by (node) (cluster:master_nodes))",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "out: \{\{node\}\}",
+              "legendFormat": "out: {{ "{{" }}node{{ "}}" }}",
               "refId": "B"
             }
           ],
@@ -2250,7 +2250,7 @@ spec:
               "expr": "sum by (node) (rate(node_network_receive_errs_total{device!~\"veth.+\",job=\"node-exporter\"}[2m]) * on (namespace, pod) group_left(node) node_namespace_pod:kube_pod_info:)",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "receive: \{\{node\}\}",
+              "legendFormat": "receive: {{ "{{" }}node{{ "}}" }}",
               "range": true,
               "refId": "A",
               "step": 120
@@ -2263,7 +2263,7 @@ spec:
               "expr": "sum by (node) (rate(node_network_transmit_errs_total{device!~\"veth.+\",job=\"node-exporter\"}[2m]) * on (namespace, pod) group_left(node) node_namespace_pod:kube_pod_info:)",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "transmit: \{\{node\}\}",
+              "legendFormat": "transmit: {{ "{{" }}node{{ "}}" }}",
               "refId": "B"
             }
           ],
@@ -2588,7 +2588,7 @@ spec:
               "expr": "sum(kube_node_info) by (kernel_version)",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "kernel: \{\{kernel_version\}\}",
+              "legendFormat": "kernel: {{ "{{" }}kernel_version{{ "}}" }}",
               "refId": "A"
             },
             {
@@ -2611,7 +2611,7 @@ spec:
               "expr": "sum(kube_node_info) by (container_runtime_version)",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "runtime: \{\{container_runtime_version\}\}",
+              "legendFormat": "runtime: {{ "{{" }}container_runtime_version{{ "}}" }}",
               "refId": "C"
             },
             {
@@ -2634,7 +2634,7 @@ spec:
               "expr": "sum(kube_node_info) by (kubelet_version)",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "kubernetes: \{\{kubelet_version\}\}",
+              "legendFormat": "kubernetes: {{ "{{" }}kubelet_version{{ "}}" }}",
               "refId": "E"
             },
             {
@@ -2811,7 +2811,7 @@ spec:
               "expr": "sum by (condition, version) ((cluster_operator_conditions) * on (name) group_left(version) (cluster_operator_up))",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "version: \{\{version\}\} / \{\{condition\}\}",
+              "legendFormat": "version: {{ "{{" }}version{{ "}}" }} / {{ "{{" }}condition{{ "}}" }}",
               "refId": "A"
             },
             {
@@ -2976,7 +2976,7 @@ spec:
               "expr": "(node_nf_conntrack_entries) * on (namespace, pod) group_left(node) node_namespace_pod:kube_pod_info:",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "\{\{node\}\}",
+              "legendFormat": "{{ "{{" }}node{{ "}}" }}",
               "refId": "A",
               "step": 120
             },
@@ -3097,7 +3097,7 @@ spec:
               "hide": false,
               "instant": false,
               "intervalFactor": 1,
-              "legendFormat": "\{\{node\}\}",
+              "legendFormat": "{{ "{{" }}node{{ "}}" }}",
               "refId": "A"
             },
             {
@@ -3211,7 +3211,7 @@ spec:
               "expr": "sum by (node) (irate(node_disk_io_time_seconds_total{job=\"node-exporter\",device=~\"nvme.+|rbd.+|sd.+|vd.+|xvd.+|dm-.+\"}[1m]) * on (namespace, pod) group_left(node) node_namespace_pod:kube_pod_info:)",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "\{\{node\}\}",
+              "legendFormat": "{{ "{{" }}node{{ "}}" }}",
               "refId": "A"
             }
           ],
@@ -3345,7 +3345,7 @@ spec:
               "format": "time_series",
               "instant": false,
               "intervalFactor": 1,
-              "legendFormat": "\{\{node\}\}",
+              "legendFormat": "{{ "{{" }}node{{ "}}" }}",
               "refId": "A",
               "step": 120
             }
@@ -3457,7 +3457,7 @@ spec:
               "expr": "irate(node_context_switches_total[5m]) * on (namespace, pod) group_left(node) node_namespace_pod:kube_pod_info:",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "context_switches: \{\{node\}\}",
+              "legendFormat": "context_switches: {{ "{{" }}node{{ "}}" }}",
               "refId": "A"
             },
             {
@@ -3468,7 +3468,7 @@ spec:
               "expr": "irate(node_intr_total[5m]) * on (namespace, pod) group_left(node) node_namespace_pod:kube_pod_info:",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "hw_interrupts: \{\{node\}\}",
+              "legendFormat": "hw_interrupts: {{ "{{" }}node{{ "}}" }}",
               "refId": "B"
             }
           ],
