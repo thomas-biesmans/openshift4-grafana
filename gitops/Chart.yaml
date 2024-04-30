@@ -5,13 +5,13 @@ version: 1.0.0
 appVersion: 1.0.0
 
 dependencies:
-- name: "Base Grafana installation"
+- name: base
   version: "1.0.0"
   repository: "file://base/"
-- name: "Custom Grafana dashboards"
+- name: custom-dashboards
   version: "1.0.0"
   repository: "file://custom_dashboards/"
-- name: "Native OpenShift Grafana dashboards"
+- name: native-openshift-dashboards
   version: "1.0.0"
   repository: "file://native_openshift_dashboards/"
 
