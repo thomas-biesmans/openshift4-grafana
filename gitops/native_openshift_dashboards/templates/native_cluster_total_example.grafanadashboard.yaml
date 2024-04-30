@@ -1,8 +1,9 @@
+---
 # Per: https://github.com/rh-mobb/helm-charts/blob/main/charts/rosa-federated-prometheus/files/dashboards/grafana-dashboard-cluster-total.json
 apiVersion: grafana.integreatly.org/v1beta1
 kind: GrafanaDashboard
 metadata:
-  name: native-cluster-totals
+  name: native-cluster-totals-example
   namespace: {{ .Values.namespace_to_deploy_grafana_and_dashboards }}
 spec:
   folder: "OpenShift native dashboards"
