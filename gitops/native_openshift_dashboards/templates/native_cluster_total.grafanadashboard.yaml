@@ -1810,7 +1810,7 @@ spec:
                     },
                     "hide": 0,
                     "label": null,
-                    "name": "datasource",
+                    "name": "Datasource",
                     "options": [
 
                     ],
