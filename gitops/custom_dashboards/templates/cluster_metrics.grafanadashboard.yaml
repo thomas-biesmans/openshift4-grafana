@@ -375,7 +375,7 @@ spec:
               "expr": "code:cluster:ingress_http_request_count:rate5m:sum",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "HTTP {{code}}",
+              "legendFormat": "HTTP \{\{code\}\}",
               "refId": "A",
               "step": 120
             }
@@ -512,7 +512,7 @@ spec:
               "format": "time_series",
               "instant": false,
               "intervalFactor": 1,
-              "legendFormat": "{{name}} ({{condition}})",
+              "legendFormat": "\{\{name\}\} (\{\{condition\}\})",
               "refId": "A"
             }
           ],
@@ -951,7 +951,7 @@ spec:
               "expr": "sum by (reason) (kube_pod_container_status_waiting_reason)",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "{{reason}}",
+              "legendFormat": "\{\{reason\}\}",
               "refId": "A"
             },
             {
@@ -963,7 +963,7 @@ spec:
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
-              "legendFormat": "{{reason}}",
+              "legendFormat": "\{\{reason\}\}",
               "refId": "B"
             }
           ],
@@ -1062,7 +1062,7 @@ spec:
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
-              "legendFormat": "runtime: {{operation_type}}",
+              "legendFormat": "runtime: \{\{operation_type\}\}",
               "refId": "A"
             },
             {
@@ -1071,7 +1071,7 @@ spec:
                 "uid": "${DS_PROMETHEUS}"
               },
               "expr": "histogram_quantile(0.99, sum(rate(kubelet_cgroup_manager_duration_seconds_bucket[5m])) by (operation_type, le))",
-              "legendFormat": "cgroup: {{operation_type}}",
+              "legendFormat": "cgroup: \{\{operation_type\}\}",
               "refId": "B"
             },
             {
@@ -1080,7 +1080,7 @@ spec:
                 "uid": "${DS_PROMETHEUS}"
               },
               "expr": "histogram_quantile(0.99, sum(rate(kubelet_pod_worker_duration_seconds_bucket[5m])) by (operation_type, le))",
-              "legendFormat": "worker: {{operation_type}}",
+              "legendFormat": "worker: \{\{operation_type\}\}",
               "refId": "C"
             }
           ],
@@ -1177,7 +1177,7 @@ spec:
               "hide": false,
               "interval": "",
               "intervalFactor": 1,
-              "legendFormat": "{{operation_type}}",
+              "legendFormat": "\{\{operation_type\}\}",
               "refId": "A"
             }
           ],
@@ -1312,7 +1312,7 @@ spec:
               "expr": "sum by (alertname, severity)(ALERTS{alertname!=\"Watchdog\"})",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "{{alertname}} ({{severity}})",
+              "legendFormat": "\{\{alertname\}\} (\{\{severity\}\})",
               "refId": "A"
             },
             {
@@ -1428,7 +1428,7 @@ spec:
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
-              "legendFormat": "HTTP {{code}}",
+              "legendFormat": "HTTP \{\{code\}\}",
               "refId": "A"
             }
           ],
@@ -1524,7 +1524,7 @@ spec:
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
-              "legendFormat": "{{verb}}",
+              "legendFormat": "\{\{verb\}\}",
               "refId": "A"
             }
           ],
@@ -1659,7 +1659,7 @@ spec:
               "expr": "etcd_server_has_leader",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "{{pod}}",
+              "legendFormat": "\{\{pod\}\}",
               "refId": "A"
             }
           ],
@@ -2039,7 +2039,7 @@ spec:
               "instant": false,
               "interval": "",
               "intervalFactor": 1,
-              "legendFormat": "{{node}}",
+              "legendFormat": "\{\{node\}\}",
               "refId": "A",
               "step": 120
             }
@@ -2147,7 +2147,7 @@ spec:
               "format": "time_series",
               "instant": false,
               "intervalFactor": 1,
-              "legendFormat": "{{namespace}}",
+              "legendFormat": "\{\{namespace\}\}",
               "refId": "A",
               "step": 120
             }
@@ -2277,7 +2277,7 @@ spec:
               "expr": "100 * sort_desc(sum (kubelet_volume_stats_used_bytes) by (persistentvolumeclaim, namespace) / sum (kubelet_volume_stats_capacity_bytes) by (persistentvolumeclaim, namespace))",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "{{namespace}} / {{persistentvolumeclaim}}",
+              "legendFormat": "\{\{namespace\}\} / \{\{persistentvolumeclaim\}\}",
               "refId": "A"
             }
           ],
