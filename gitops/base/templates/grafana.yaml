@@ -19,6 +19,7 @@ spec:
       admin_user: admin
   route:
     spec:
+      host: {{ .Values.grafana_dashboard_route_hostname }}
       port:
         targetPort: grafana
       tls:
