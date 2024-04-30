@@ -14,10 +14,10 @@ spec:
   datasources:
   - datasourceName: Prometheus
     inputName: DS_PROMETHEUS
-  json: |-
-{{- $yaml_report := $json_report.json | toYaml }}
-{{- range $replacement_operation := $json_report.replace_operations }}
-{{ $yaml_report := $yaml_report | replace $replacement_operation.from $replacement_operation.to }}
-{{- end }}
-{{- $yaml_report | indent 4 }}
-{{- end }}
+  json: | {{ "\n" }}
+{{- $json_transformed := $json_report.json -}}
+{{- range $replacement_operation := $json_report.replacement_operations -}}
+{{- $json_transformed = $json_transformed | replace $replacement_operation.from $replacement_operation.to -}}
+{{- end -}}
+{{ $json_transformed | indent 4 }}
+{{- end -}}
