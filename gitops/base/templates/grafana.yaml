@@ -26,6 +26,6 @@ spec:
         termination: edge
       to:
         kind: Service
-        name: grafana-service
+        name: {{ .Values.grafana_dashboard_name }}-service
         weight: 100
       wildcardPolicy: None
