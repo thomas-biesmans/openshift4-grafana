@@ -127,7 +127,7 @@ spec:
                         "expr": "sort_desc(sum(irate(container_network_receive_bytes_total{cluster=\"$cluster\",namespace=~\".+\"}[$interval:$resolution])) by (namespace))",
                         "format": "time_series",
                         "intervalFactor": 1,
-                        "legendFormat": "{{namespace}}",
+                        "legendFormat": "\{\{namespace\}\}",
                         "refId": "A",
                         "step": 10
                     }
@@ -230,7 +230,7 @@ spec:
                         "expr": "sort_desc(sum(irate(container_network_transmit_bytes_total{cluster=\"$cluster\",namespace=~\".+\"}[$interval:$resolution])) by (namespace))",
                         "format": "time_series",
                         "intervalFactor": 1,
-                        "legendFormat": "{{namespace}}",
+                        "legendFormat": "\{\{namespace\}\}",
                         "refId": "A",
                         "step": 10
                     }
@@ -674,7 +674,7 @@ spec:
                                 "expr": "sort_desc(avg(irate(container_network_receive_bytes_total{cluster=\"$cluster\",namespace=~\".+\"}[$interval:$resolution])) by (namespace))",
                                 "format": "time_series",
                                 "intervalFactor": 1,
-                                "legendFormat": "{{namespace}}",
+                                "legendFormat": "\{\{namespace\}\}",
                                 "refId": "A",
                                 "step": 10
                             }
@@ -777,7 +777,7 @@ spec:
                                 "expr": "sort_desc(avg(irate(container_network_transmit_bytes_total{cluster=\"$cluster\",namespace=~\".+\"}[$interval:$resolution])) by (namespace))",
                                 "format": "time_series",
                                 "intervalFactor": 1,
-                                "legendFormat": "{{namespace}}",
+                                "legendFormat": "\{\{namespace\}\}",
                                 "refId": "A",
                                 "step": 10
                             }
@@ -908,7 +908,7 @@ spec:
                         "expr": "sort_desc(sum(irate(container_network_receive_bytes_total{cluster=\"$cluster\",namespace=~\".+\"}[$interval:$resolution])) by (namespace))",
                         "format": "time_series",
                         "intervalFactor": 1,
-                        "legendFormat": "{{namespace}}",
+                        "legendFormat": "\{\{namespace\}\}",
                         "refId": "A",
                         "step": 10
                     }
@@ -1009,7 +1009,7 @@ spec:
                         "expr": "sort_desc(sum(irate(container_network_transmit_bytes_total{cluster=\"$cluster\",namespace=~\".+\"}[$interval:$resolution])) by (namespace))",
                         "format": "time_series",
                         "intervalFactor": 1,
-                        "legendFormat": "{{namespace}}",
+                        "legendFormat": "\{\{namespace\}\}",
                         "refId": "A",
                         "step": 10
                     }
@@ -1121,7 +1121,7 @@ spec:
                                 "expr": "sort_desc(sum(irate(container_network_receive_packets_total{cluster=\"$cluster\",namespace=~\".+\"}[$interval:$resolution])) by (namespace))",
                                 "format": "time_series",
                                 "intervalFactor": 1,
-                                "legendFormat": "{{namespace}}",
+                                "legendFormat": "\{\{namespace\}\}",
                                 "refId": "A",
                                 "step": 10
                             }
@@ -1222,7 +1222,7 @@ spec:
                                 "expr": "sort_desc(sum(irate(container_network_transmit_packets_total{cluster=\"$cluster\",namespace=~\".+\"}[$interval:$resolution])) by (namespace))",
                                 "format": "time_series",
                                 "intervalFactor": 1,
-                                "legendFormat": "{{namespace}}",
+                                "legendFormat": "\{\{namespace\}\}",
                                 "refId": "A",
                                 "step": 10
                             }
@@ -1343,7 +1343,7 @@ spec:
                                 "expr": "sort_desc(sum(irate(container_network_receive_packets_dropped_total{cluster=\"$cluster\",namespace=~\".+\"}[$interval:$resolution])) by (namespace))",
                                 "format": "time_series",
                                 "intervalFactor": 1,
-                                "legendFormat": "{{namespace}}",
+                                "legendFormat": "\{\{namespace\}\}",
                                 "refId": "A",
                                 "step": 10
                             }
@@ -1444,7 +1444,7 @@ spec:
                                 "expr": "sort_desc(sum(irate(container_network_transmit_packets_dropped_total{cluster=\"$cluster\",namespace=~\".+\"}[$interval:$resolution])) by (namespace))",
                                 "format": "time_series",
                                 "intervalFactor": 1,
-                                "legendFormat": "{{namespace}}",
+                                "legendFormat": "\{\{namespace\}\}",
                                 "refId": "A",
                                 "step": 10
                             }
