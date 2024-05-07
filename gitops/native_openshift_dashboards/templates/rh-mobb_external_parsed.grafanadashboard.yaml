@@ -1,13 +1,13 @@
+{{- range $path, $_ := .Files.Glob "files/rh-mobb/dashboards/*.json" -}}
 ---
-{{- range $json_report := .Values.external_jsons }}
-{{ "#" }} Per: {{ $json_report.url }}
+{{ "#" }} Per: {{ $.Values.external_jsons_rhmobb.url }}
 apiVersion: grafana.integreatly.org/v1beta1
 kind: GrafanaDashboard
 metadata:
-  name: {{ $json_report.name }}
+  name: {{ printf "%s%s%s" $.Values.external_jsons_rhmobb.name_prefix $path $.Values.external_jsons_rhmobb.name_prefix }}
   namespace: {{ $.Values.namespace_to_deploy_grafana_and_dashboards }}
 spec:
-  folder: {{ $json_report.folder }}
+  folder: {{ $.Values.external_jsons_rhmobb.folder }}
   instanceSelector:
     matchLabels:
       dashboards: {{ $.Values.grafana_dashboard_name }}
@@ -15,8 +15,8 @@ spec:
   - datasourceName: Prometheus
     inputName: DS_PROMETHEUS
   json: | {{ "\n" }}
-{{- $json_transformed := $json_report.json -}}
-{{- range $replacement_operation := $json_report.replacement_operations -}}
+{{- $json_transformed := $.Files.Get $path -}}
+{{- range $replacement_operation := $.Values.external_jsons_rhmobb.replacement_operations -}}
 {{- $json_transformed = $json_transformed | replace $replacement_operation.from $replacement_operation.to -}}
 {{- end -}}
 {{ $json_transformed | indent 4 }}
