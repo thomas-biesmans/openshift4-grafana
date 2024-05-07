@@ -10,7 +10,7 @@ metadata:
   {{- if $.Values.external_jsons_rhmobb.name_prefix }}
     {{- $concatenated_filename = printf "%s%s" $.Values.external_jsons_rhmobb.name_prefix $concatenated_filename }}
   {{- end }}
-  {{- if $.Values.external_jsons_rhmobb.name_prefix }}
+  {{- if $.Values.external_jsons_rhmobb.name_suffix }}
     {{- $concatenated_filename = printf "%s%s" $concatenated_filename $.Values.external_jsons_rhmobb.name_suffix }}
   {{- end }}
   name: {{ $concatenated_filename }}
