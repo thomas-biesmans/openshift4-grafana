@@ -18,4 +18,12 @@ external_jsons:
                 "pluginName": "Prometheus"
               }
           ],
+  - from: "\"datasource\": \"$datasource\","
+    to: "\"datasource\": \"${DS_PROMETHEUS}\","
+  - from: "\"text\": \"default\","
+    to: "\"text\": \"${DS_PROMETHEUS}\","
+  - from: "\"value\": \"default\","
+    to: "\"value\": \"${DS_PROMETHEUS}\","
+  - from: "\"name\": \"datasource\","
+    to: "\"name\": \"Datasource\","
 
