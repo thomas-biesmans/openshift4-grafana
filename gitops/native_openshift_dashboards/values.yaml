@@ -6,7 +6,7 @@ external_jsons_rhmobb:
   url: https://github.com/rh-mobb/helm-charts/blob/main/charts/rosa-federated-prometheus/files/dashboards/
   date: 2021/10/26
   replacement_operations:
-  - from: "\"__inputs\": [\n\n    ],\n"
+  - from: "\\\"__inputs\\\": [\\\n\\\n    ],\\\n"
     to: |
       "__inputs": [
               {
@@ -18,11 +18,11 @@ external_jsons_rhmobb:
                 "pluginName": "Prometheus"
               }
           ],
-  - from: "\"datasource\": \"$datasource\","
-    to: "\"datasource\": \"${DS_PROMETHEUS}\","
-  - from: "\"text\": \"default\","
-    to: "\"text\": \"${DS_PROMETHEUS}\","
-  - from: "\"value\": \"default\""
-    to: "\"value\": \"${DS_PROMETHEUS}\""
-  - from: "\"name\": \"datasource\","
-    to: "\"name\": \"Datasource\","
+  - from: "\\\"datasource\\\": \\\"$datasource\\\","
+    to: "\\\"datasource\\\": \\\"${DS_PROMETHEUS}\\\","
+  - from: "\\\"text\\\": \\\"default\\\","
+    to: "\\\"text\\\": \\\"${DS_PROMETHEUS}\\\","
+  - from: "\\\"value\\\": \\\"default\\\""
+    to: "\\\"value\\\": \\\"${DS_PROMETHEUS}\\\""
+  - from: "\\\"name\\\": \\\"datasource\\\","
+    to: "\\\"name\\\": \\\"Datasource\\\","
