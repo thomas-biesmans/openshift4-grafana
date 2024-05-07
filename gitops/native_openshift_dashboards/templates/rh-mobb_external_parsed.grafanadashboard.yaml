@@ -23,8 +23,9 @@ spec:
   datasources:
   - datasourceName: Prometheus
     inputName: DS_PROMETHEUS
-  json: |- {{ "\n" }}
+  json: | {{ "\n" }}
 {{- $json_transformed := $.Files.Get $path -}}
+{{- substr $json_transformed 1 (sub (len $json_transformed) 2) }}
 {{- range $replacement_operation := $.Values.external_jsons_rhmobb.replacement_operations -}}
 {{- $json_transformed = $json_transformed | replace $replacement_operation.from $replacement_operation.to -}}
 {{- end -}}
