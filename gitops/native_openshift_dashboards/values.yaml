@@ -7,7 +7,7 @@ external_jsons_rhmobb:
   date: 2021/10/26
   replacement_operations:
   - from: "\\\"__inputs\\\": [\\n\\n    ],\\n"
-    to: "\\\"__inputs\\\": [\\\\n              {\\n                \\\"name\\\": \\\"DS_PROMETHEUS\\\",\\n                \\\"label\\\": \\\"Prometheus\\\",\\n                \\\"description\\\": \\\"\\\",\\n                \\\"type\\\": \\\"datasource\\\",\\n                \\\"pluginId\\\": \\\"prometheus\\\",\\n                \\\"pluginName\\\": \\\"Prometheus\\\"\\n              }\\n          ],\\n"
+    to: "\\\"__inputs\\\": [\\n\\n              {\\n                \\\"name\\\": \\\"DS_PROMETHEUS\\\",\\n                \\\"label\\\": \\\"Prometheus\\\",\\n                \\\"description\\\": \\\"\\\",\\n                \\\"type\\\": \\\"datasource\\\",\\n                \\\"pluginId\\\": \\\"prometheus\\\",\\n                \\\"pluginName\\\": \\\"Prometheus\\\"\\n              }\\n          ],\\n"
   - from: "\\\"datasource\\\": \\\"$datasource\\\","
     to: "\\\"datasource\\\": \\\"${DS_PROMETHEUS}\\\","
   - from: "\\\"text\\\": \\\"default\\\","
