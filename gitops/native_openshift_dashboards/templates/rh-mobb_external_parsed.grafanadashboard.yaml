@@ -4,9 +4,16 @@
 apiVersion: grafana.integreatly.org/v1beta1
 kind: GrafanaDashboard
 metadata:
-  {{- $parsed_filename := regexReplaceAll "(.*)/" $path "" -}}
-  {{- $parsed_filename = regexReplaceAll ".json" $parsed_filename "" -}}
-  name: {{ printf "%s%s%s" $.Values.external_jsons_rhmobb.name_prefix $parsed_filename $.Values.external_jsons_rhmobb.name_suffix }}
+  {{- $parsed_filename := regexReplaceAll "(.*)/" $path "" }}
+  {{- $parsed_filename = regexReplaceAll ".json" $parsed_filename "" }}
+  {{- $concatenated_filename := $parsed_filename }}
+  {{- if $.Values.external_jsons_rhmobb.name_prefix }}
+    {{- $concatenated_filename = printf "%s%s" $.Values.external_jsons_rhmobb.name_prefix $concatenated_filename }}
+  {{- end }}
+  {{- if $.Values.external_jsons_rhmobb.name_prefix }}
+    {{- $concatenated_filename = printf "%s%s" $concatenated_filename $.Values.external_jsons_rhmobb.name_suffix }}
+  {{- end }}
+  name: {{ $concatenated_filename }}
   namespace: {{ $.Values.namespace_to_deploy_grafana_and_dashboards }}
 spec:
   folder: {{ $.Values.external_jsons_rhmobb.folder }}
