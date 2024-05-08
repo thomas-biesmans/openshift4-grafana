@@ -1,0 +1,31 @@
+{{- range $path, $_ := .Files.Glob "files/dotdc/dashboards/*.json" }}
+---
+{{ "#" }} Per: {{ $.Values.external_jsons_dotdc.url }}
+apiVersion: grafana.integreatly.org/v1beta1
+kind: GrafanaDashboard
+metadata:
+  {{- $parsed_filename := regexReplaceAll "(.*)/" $path "" }}
+  {{- $parsed_filename = regexReplaceAll ".json" $parsed_filename "" }}
+  {{- $concatenated_filename := $parsed_filename }}
+  {{- if $.Values.external_jsons_dotdc.name_prefix }}
+    {{- $concatenated_filename = printf "%s%s" $.Values.external_jsons_dotdc.name_prefix $concatenated_filename }}
+  {{- end }}
+  {{- if $.Values.external_jsons_dotdc.name_suffix }}
+    {{- $concatenated_filename = printf "%s%s" $concatenated_filename $.Values.external_jsons_dotdc.name_suffix }}
+  {{- end }}
+  name: {{ $concatenated_filename }}
+  namespace: {{ $.Values.namespace_to_deploy_grafana_and_dashboards }}
+spec:
+  folder: {{ $.Values.external_jsons_dotdc.folder }}
+  instanceSelector:
+    matchLabels:
+      dashboards: {{ $.Values.grafana_dashboard_name }}
+  datasources:
+  - datasourceName: Prometheus
+    inputName: DS_PROMETHEUS
+{{- $json_transformed := $.Files.Get $path }}
+{{- range $replacement_operation := $.Values.external_jsons_dotdc.replacement_operations }}
+{{- $json_transformed = $json_transformed | replace $replacement_operation.from $replacement_operation.to }}
+{{- end }}
+  json: {{ $json_transformed }}
+{{- end }}

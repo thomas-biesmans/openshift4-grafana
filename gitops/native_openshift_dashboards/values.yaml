@@ -17,3 +17,10 @@ external_jsons_rhmobb:
   - from: "\\\"name\\\": \\\"datasource\\\","
     to: "\\\"name\\\": \\\"Datasource\\\","
 
+external_jsons_dotdc:
+  name_prefix: native-
+  name_suffix: 
+  folder: Grafana Kubernetes native dashboards (dotdc)
+  url: https://github.com/dotdc/grafana-dashboards-kubernetes/blob/master/dashboards/
+  date: 2024/05/08
+  replacement_operations: []
