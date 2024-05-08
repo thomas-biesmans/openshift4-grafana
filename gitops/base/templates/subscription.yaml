@@ -5,6 +5,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "2"
   name: grafana-operator
+  namespace: {{ .Values.namespace_to_deploy_grafana_and_dashboards }}
 spec:
   channel: v5
   installPlanApproval: Automatic
@@ -19,6 +20,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "2"
   name: grafana
+  namespace: {{ .Values.namespace_to_deploy_grafana_and_dashboards }}
 spec:
   targetNamespaces:
    - {{ .Values.namespace_to_deploy_grafana_and_dashboards }}
