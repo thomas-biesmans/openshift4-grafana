@@ -18,6 +18,7 @@ metadata:
   annotations:
     dashboard_source: {{ $.Values.external_jsons_rhmobb.url }}
     dashboard_import_date: {{ $.Values.external_jsons_rhmobb.date }}
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 spec:
   folder: {{ $.Values.external_jsons_rhmobb.folder }}
   instanceSelector:

@@ -3,6 +3,8 @@ kind: GrafanaDashboard
 metadata:
   name: cluster-metrics
   namespace: {{ .Values.namespace_to_deploy_grafana_and_dashboards }}
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 spec:
   folder: "General"
   resyncPeriod: 30s
