@@ -30,5 +30,6 @@ spec:
 {{- range $replacement_operation := $.Values.external_jsons_dotdc.replacement_operations }}
 {{- $json_transformed = $json_transformed | replace $replacement_operation.from $replacement_operation.to }}
 {{- end }}
-  json: {{ $json_transformed }}
+  json: |
+{{ $json_transformed | indent 6 }}
 {{- end }}
