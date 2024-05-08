@@ -15,6 +15,9 @@ metadata:
   {{- end }}
   name: {{ $concatenated_filename }}
   namespace: {{ $.Values.namespace_to_deploy_grafana_and_dashboards }}
+  annotations:
+    dashboard_source: {{ $.Values.external_jsons_rhmobb.url }}
+    dashboard_import_date: {{ $.Values.external_jsons_rhmobb.date }}
 spec:
   folder: {{ $.Values.external_jsons_rhmobb.folder }}
   instanceSelector:
