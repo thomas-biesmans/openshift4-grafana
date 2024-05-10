@@ -16,6 +16,16 @@ spec:
     log:
       mode: console
     security:
+      # These values can be commented out, this way you can specify your own secret:
+      # kind: Secret
+      # apiVersion: v1
+      # metadata:
+      #   name: grafana-openshift-admin-credentials
+      #   namespace: monitoring-grafana-dashboards
+      # data:
+      #   GF_SECURITY_ADMIN_PASSWORD: dD...Ug=
+      #   GF_SECURITY_ADMIN_USER: Y...=
+      # type: Opaque
       admin_password: redhat
       admin_user: admin
   route:
