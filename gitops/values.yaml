@@ -3,7 +3,7 @@ base:
   grafana_operator_version: grafana-operator.v5.8.0
   namespace_to_deploy_grafana_and_dashboards: monitoring-grafana-dashboards
   grafana_dashboard_name: grafana-openshift
-custom-dashboard:
+custom-dashboards:
   namespace_to_deploy_grafana_and_dashboards: monitoring-grafana-dashboards
   grafana_dashboard_name: grafana-openshift
 native-openshift-dashboards:
