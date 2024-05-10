@@ -3,14 +3,13 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: grafana-openshift
-  namespace: openshift-gitops
+  namespace: openshift-gitops # argocd
 spec:
   destination:
-    namespace: monitoring-grafana-dashboards
-    server: https://kubernetes.default.svc
+    server: 'https://api.<cluster FQDN>:6443'
   project: default
   source:
-    path: gitops/overlays/dashboards
+    path: gitops
     repoURL: https://github.com/thomas-biesmans/openshift4-grafana.git
     targetRevision: HEAD
     helm:
@@ -23,3 +22,4 @@ spec:
       selfHeal: true
     syncOptions:
     - CreateNamespace=true
+    - Validate="False"
