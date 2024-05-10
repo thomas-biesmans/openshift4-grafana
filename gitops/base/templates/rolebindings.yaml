@@ -3,7 +3,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "3"
+    argocd.argoproj.io/sync-wave: "2"
   name: grafana-sa
   namespace: {{ .Values.namespace_to_deploy_grafana_and_dashboards }}
 ---
@@ -14,7 +14,7 @@ metadata:
   namespace: {{ .Values.namespace_to_deploy_grafana_and_dashboards }}
   annotations:
     argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "3"
+    argocd.argoproj.io/sync-wave: "2"
     argocd.argoproj.io/hook-delete-policy: HookSucceeded
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -30,6 +30,8 @@ kind: ClusterRoleBinding
 metadata:
   name: cluster-monitoring-view-0
   namespace: {{ .Values.namespace_to_deploy_grafana_and_dashboards }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -44,6 +46,8 @@ kind: RoleBinding
 metadata:
   name: edit-0
   namespace: {{ .Values.namespace_to_deploy_grafana_and_dashboards }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole

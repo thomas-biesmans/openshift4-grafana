@@ -5,6 +5,7 @@ metadata:
   namespace: {{ .Values.namespace_to_deploy_grafana_and_dashboards }}
   annotations:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "4"
 spec:
   folder: "General"
   resyncPeriod: 30s
