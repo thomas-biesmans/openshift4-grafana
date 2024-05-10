@@ -92,7 +92,7 @@ spec:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ebc57f8d-3625-4def-9c97-5a6049fbdc0a"
+            "uid": "${DS_PROMETHEUS}"
           },
           "fieldConfig": {
             "defaults": {
@@ -147,7 +147,7 @@ spec:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ebc57f8d-3625-4def-9c97-5a6049fbdc0a"
+                "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
               "expr": "sum(rate(container_cpu_usage_seconds_total{container!=\"\"}[$resolution])) by (node) /     sum(kube_node_status_allocatable{resource=\"cpu\"}) by (node) * 100",
@@ -163,7 +163,7 @@ spec:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ebc57f8d-3625-4def-9c97-5a6049fbdc0a"
+            "uid": "${DS_PROMETHEUS}"
           },
           "fieldConfig": {
             "defaults": {
@@ -218,7 +218,7 @@ spec:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ebc57f8d-3625-4def-9c97-5a6049fbdc0a"
+                "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
               "expr": "sum(container_memory_usage_bytes{container!=\"\"}) by (node) / \r\nsum    (kube_node_status_allocatable{resource=\"memory\"}) by (node) * 100",
@@ -234,7 +234,7 @@ spec:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ebc57f8d-3625-4def-9c97-5a6049fbdc0a"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
           "fieldConfig": {
@@ -341,7 +341,7 @@ spec:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ebc57f8d-3625-4def-9c97-5a6049fbdc0a"
+            "uid": "${DS_PROMETHEUS}"
           },
           "fieldConfig": {
             "defaults": {
@@ -418,7 +418,7 @@ spec:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ebc57f8d-3625-4def-9c97-5a6049fbdc0a"
+                "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
               "expr": "sort_desc(max(sum_over_time(kube_pod_status_phase{phase=\"Pending\",     namespace=~\"$namespace\"}[30s]) > 0.2) by (pod, namespace, phase))",
@@ -493,7 +493,7 @@ spec:
             },
             "datasource": {
               "type": "prometheus",
-              "uid": "ebc57f8d-3625-4def-9c97-5a6049fbdc0a"
+              "uid": "${DS_PROMETHEUS}"
             },
             "definition": "label_values(kube_pod_info,namespace)",
             "hide": 0,

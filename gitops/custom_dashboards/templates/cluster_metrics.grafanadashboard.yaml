@@ -93,7 +93,7 @@ spec:
           "collapsed": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "b092b9b6-4406-442b-9c8b-48db64acaee7"
+            "uid": "${DS_PROMETHEUS}"
           },
           "gridPos": {
             "h": 1,
@@ -107,7 +107,7 @@ spec:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "b092b9b6-4406-442b-9c8b-48db64acaee7"
+                "uid": "${DS_PROMETHEUS}"
               },
               "refId": "A"
             }
@@ -868,7 +868,7 @@ spec:
           "collapsed": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "b092b9b6-4406-442b-9c8b-48db64acaee7"
+            "uid": "${DS_PROMETHEUS}"
           },
           "gridPos": {
             "h": 1,
@@ -882,7 +882,7 @@ spec:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "b092b9b6-4406-442b-9c8b-48db64acaee7"
+                "uid": "${DS_PROMETHEUS}"
               },
               "refId": "A"
             }
@@ -1713,7 +1713,7 @@ spec:
           "collapsed": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "b092b9b6-4406-442b-9c8b-48db64acaee7"
+            "uid": "${DS_PROMETHEUS}"
           },
           "gridPos": {
             "h": 1,
@@ -1727,7 +1727,7 @@ spec:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "b092b9b6-4406-442b-9c8b-48db64acaee7"
+                "uid": "${DS_PROMETHEUS}"
               },
               "refId": "A"
             }
