@@ -1,3 +1,4 @@
 ---
 base:
   grafana_dashboard_route_hostname: grafana-openshift.apps.openshiftdev.realdolmencloud.com
+  grafana_dashboard_route_hostname_no_oauth: grafana-openshift-nooauth.apps.openshiftdev.realdolmencloud.com

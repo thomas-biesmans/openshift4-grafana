@@ -7,7 +7,10 @@ appVersion: 1.0.0
 dependencies:
 - name: base
   version: "1.0.0"
-  repository: "file://base/"
+  ## Regular one
+  # repository: "file://base/"
+  ## OpenShift OAuth proxy 
+  repository: "file://base_openshift_oauth_proxy/"
 - name: custom-dashboards
   version: "1.0.0"
   repository: "file://custom_dashboards/"
