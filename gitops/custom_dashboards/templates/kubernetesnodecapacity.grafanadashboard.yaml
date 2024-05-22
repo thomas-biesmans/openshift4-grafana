@@ -514,8 +514,8 @@ spec:
         ]
       },
       "time": {
-        "from": "2024-05-08T06:49:56.669Z",
-        "to": "2024-05-08T09:23:38.797Z"
+        "from": "now-1h",
+        "to": "now"
       },
       "timepicker": {},
       "timezone": "",
